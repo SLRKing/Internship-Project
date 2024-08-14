@@ -1,0 +1,3 @@
+https://huggingface.co/spaces/rocky1728/PredictGermanBankCreditRisk
+
+use above link to run the app and predict
