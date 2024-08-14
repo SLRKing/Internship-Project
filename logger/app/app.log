@@ -1,0 +1,43 @@
+2024-08-13 11:01:59,142 - __main__ - INFO - Starting the app
+2024-08-13 11:01:59,902 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-13 11:01:59,902 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-08-13 11:01:59,905 - werkzeug - INFO -  * Restarting with stat
+2024-08-13 11:02:00,565 - __main__ - INFO - Starting the app
+2024-08-13 11:02:01,164 - werkzeug - WARNING -  * Debugger is active!
+2024-08-13 11:02:01,169 - werkzeug - INFO -  * Debugger PIN: 124-739-693
+2024-08-13 11:03:45,418 - __main__ - INFO - Starting the app
+2024-08-13 11:03:46,073 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-13 11:03:46,074 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-08-13 11:03:46,075 - werkzeug - INFO -  * Restarting with stat
+2024-08-13 11:03:46,812 - __main__ - INFO - Starting the app
+2024-08-13 11:03:47,609 - werkzeug - WARNING -  * Debugger is active!
+2024-08-13 11:03:47,612 - werkzeug - INFO -  * Debugger PIN: 124-739-693
+2024-08-13 11:17:43,517 - __main__ - INFO - Starting the app
+2024-08-13 11:17:44,764 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-13 11:17:44,764 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-08-13 11:17:44,769 - werkzeug - INFO -  * Restarting with stat
+2024-08-13 11:17:45,544 - __main__ - INFO - Starting the app
+2024-08-13 11:17:46,342 - werkzeug - WARNING -  * Debugger is active!
+2024-08-13 11:17:46,345 - werkzeug - INFO -  * Debugger PIN: 124-739-693
+2024-08-13 11:18:13,193 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2024 11:18:13] "GET / HTTP/1.1" 200 -
+2024-08-13 11:18:13,458 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2024 11:18:13] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-13 11:18:42,101 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2024 11:18:42] "POST /predict HTTP/1.1" 200 -
+2024-08-13 11:21:00,643 - werkzeug - INFO -  * Detected change in 'c:\\Users\\ravit\\Desktop\\final one\\app.py', reloading
+2024-08-13 11:21:00,935 - werkzeug - INFO -  * Restarting with stat
+2024-08-13 11:21:01,701 - __main__ - INFO - Starting the app
+2024-08-13 11:25:47,096 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2024 11:25:47] "GET / HTTP/1.1" 200 -
+2024-08-13 11:26:02,402 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2024 11:26:02] "POST /predict HTTP/1.1" 200 -
+2024-08-13 11:29:24,480 - __main__ - INFO - Starting the app
+2024-08-13 11:29:25,658 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-13 11:29:25,658 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-08-13 11:29:34,421 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2024 11:29:34] "GET / HTTP/1.1" 200 -
+2024-08-13 11:29:50,435 - __main__ - INFO - Running prediction model
+2024-08-13 11:29:50,452 - __main__ - INFO - Mapping the predicton
+2024-08-13 11:29:50,452 - __main__ - INFO - Predictioin is Bad Risk
+2024-08-13 11:29:50,452 - __main__ - INFO - Ouput Displayed 
+2024-08-13 11:29:50,458 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2024 11:29:50] "POST /predict HTTP/1.1" 200 -
+2024-08-13 11:29:50,478 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2024 11:29:50] "[33mGET /background.jpg HTTP/1.1[0m" 404 -

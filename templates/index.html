@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Risk Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://master.dwebcms.db.com/application/version/latest/files/DB-Share-Logo_1200x627.jpg'); /* Replace with your image */
+            background-size: cover;
+            background-position: center;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 50%;
+            margin: 5% auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], input[type="number"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+            <h1>Credit Risk Prediction Form</h1>
+        <form action="/predict" method="post">
+            <!-- Status -->
+            <label for="status">Status:</label><br>
+            <select name="status" id="status" required>
+                <option value="1">No checking account</option>
+                <option value="2">&lt; 0 DM</option>
+                <option value="3">0 &lt;= ... &lt; 200 DM</option>
+                <option value="4">&gt;= 200 DM / salary for at least 1 year</option>
+            </select><br><br>
+
+            <!-- Duration -->
+            <label for="duration">Duration (in months):</label><br>
+            <input type="number" id="duration" name="duration" required><br><br>
+
+            <!-- Credit History -->
+            <label for="credit_history">Credit History:</label><br>
+            <select name="credit_history" id="credit_history" required>
+                <option value="0">Delay in paying off in the past</option>
+                <option value="1">Critical account/other credits elsewhere</option>
+                <option value="2">No credits taken/all credits paid back duly</option>
+                <option value="3">Existing credits paid back duly till now</option>
+                <option value="4">All credits at this bank paid back duly</option>
+            </select><br><br>
+
+            <!-- Purpose -->
+            <label for="purpose">Purpose:</label><br>
+            <select name="purpose" id="purpose" required>
+                <option value="0">Others</option>
+                <option value="1">Car (new)</option>
+                <option value="2">Car (used)</option>
+                <option value="3">Furniture/equipment</option>
+                <option value="4">Radio/television</option>
+                <option value="5">Domestic appliances</option>
+                <option value="6">Repairs</option>
+                <option value="7">Education</option>
+                <option value="8">Vacation</option>
+                <option value="9">Retraining</option>
+                <option value="10">Business</option>
+            </select><br><br>
+
+            <!-- Amount -->
+            <label for="amount">Amount (in DM):</label><br>
+            <input type="number" id="amount" name="amount" required><br><br>
+
+            <!-- Savings -->
+            <label for="savings">Savings:</label><br>
+            <select name="savings" id="savings" required>
+                <option value="1">Unknown/no savings account</option>
+                <option value="2">&lt; 100 DM</option>
+                <option value="3">100 &lt;= ... &lt; 500 DM</option>
+                <option value="4">500 &lt;= ... &lt; 1000 DM</option>
+                <option value="5">&gt;= 1000 DM</option>
+            </select><br><br>
+
+            <!-- Employment Duration -->
+            <label for="employment_duration">Employment Duration:</label><br>
+            <select name="employment_duration" id="employment_duration" required>
+                <option value="1">Unemployed</option>
+                <option value="2">&lt; 1 yr</option>
+                <option value="3">1 &lt;= ... &lt; 4 yrs</option>
+                <option value="4">4 &lt;= ... &lt; 7 yrs</option>
+                <option value="5">&gt;= 7 yrs</option>
+            </select><br><br>
+
+            <!-- Installment Rate -->
+            <label for="installment_rate">Installment Rate (%):</label><br>
+            <select name="installment_rate" id="installment_rate" required>
+                <option value="1">&gt;= 35%</option>
+                <option value="2">25 &lt;= ... &lt; 35%</option>
+                <option value="3">20 &lt;= ... &lt; 25%</option>
+                <option value="4">&lt; 20%</option>
+            </select><br><br>
+
+            <!-- Personal Status and Sex -->
+            <label for="personal_status_sex">Personal Status and Sex:</label><br>
+            <select name="personal_status_sex" id="personal_status_sex" required>
+                <option value="1">Male: divorced/separated</option>
+                <option value="2">Female: non-single or male: single</option>
+                <option value="3">Male: married/widowed</option>
+                <option value="4">Female: single</option>
+            </select><br><br>
+
+            <!-- Other Debtors -->
+            <label for="other_debtors">Other Debtors:</label><br>
+            <select name="other_debtors" id="other_debtors" required>
+                <option value="1">None</option>
+                <option value="2">Co-applicant</option>
+                <option value="3">Guarantor</option>
+            </select><br><br>
+
+            <!-- Present Residence -->
+            <label for="present_residence">Present Residence (years):</label><br>
+            <select name="present_residence" id="present_residence" required>
+                <option value="1">&lt; 1 yr</option>
+                <option value="2">1 &lt;= ... &lt; 4 yrs</option>
+                <option value="3">4 &lt;= ... &lt; 7 yrs</option>
+                <option value="4">&gt;= 7 yrs</option>
+            </select><br><br>
+
+            <!-- Property -->
+            <label for="property">Property:</label><br>
+            <select name="property" id="property" required>
+                <option value="1">Unknown/no property</option>
+                <option value="2">Car or other</option>
+                <option value="3">Building soc. savings agr./life insurance</option>
+                <option value="4">Real estate</option>
+            </select><br><br>
+
+            <!-- Age -->
+            <label for="age">Age (years):</label><br>
+            <input type="number" id="age" name="age" required><br><br>
+
+            <!-- Other Installment Plans -->
+            <label for="other_installment_plans">Other Installment Plans:</label><br>
+            <select name="other_installment_plans" id="other_installment_plans" required>
+                <option value="1">Bank</option>
+                <option value="2">Stores</option>
+                <option value="3">None</option>
+            </select><br><br>
+
+            <!-- Housing -->
+            <label for="housing">Housing:</label><br>
+            <select name="housing" id="housing" required>
+                <option value="1">For free</option>
+                <option value="2">Rent</option>
+                <option value="3">Own</option>
+            </select><br><br>
+
+            <!-- Number of Credits -->
+            <label for="number_credits">Number of Credits:</label><br>
+            <select name="number_credits" id="number_credits" required>
+                <option value="1">1</option>
+                <option value="2">2-3</option>
+                <option value="3">4-5</option>
+                <option value="4">&gt;= 6</option>
+            </select><br><br>
+
+            <!-- Job -->
+            <label for="job">Job:</label><br>
+            <select name="job" id="job" required>
+                <option value="1">Unemployed/unskilled - non-resident</option>
+                <option value="2">Unskilled - resident</option>
+                <option value="3">Skilled employee/official</option>
+                <option value="4">Manager/self-employed/highly qualified employee</option>
+            </select><br><br>
+
+            <!-- People Liable -->
+            <label for="people_liable">People Liable:</label><br>
+            <select name="people_liable" id="people_liable" required>
+                <option value="1">3 or more</option>
+                <option value="2">0 to 2</option>
+            </select><br><br>
+
+            <!-- Telephone -->
+            <label for="telephone">Telephone:</label><br>
+            <select name="telephone" id="telephone" required>
+                <option value="1">No</option>
+                <option value="2">Yes (under customer name)</option>
+            </select><br><br>
+
+            <!-- Foreign Worker -->
+            <label for="foreign_worker">Foreign Worker:</label><br>
+            <select name="foreign_worker" id="foreign_worker" required>
+                <option value="1">Yes</option>
+                <option value="2">No</option>
+            </select><br><br>
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</body>
+</html>
